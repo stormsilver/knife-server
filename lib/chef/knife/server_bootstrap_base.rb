@@ -165,7 +165,7 @@ class Chef
       def config_val(key)
         key = key.to_sym
         default_value = options[key] && options[key][:default]
-        config.fetch(key, Chef::Config[:knife].fetch(key, default_value))
+        config.fetch(key, Chef::Config[:knife].fetch(key, default_value)[1])
       end
     end
   end
